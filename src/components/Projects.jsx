@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Award, Brain, Code, Sparkles } from 'lucide-react';
 
 const Projects = () => {
@@ -21,7 +20,7 @@ const Projects = () => {
         "Privacy-first design implementation"
       ],
       icon: Award,
-      color: "from-green-500 to-emerald-500"
+      color: "bg-gray-900"
     },
     {
       title: "Sudoku Solver using Neural Networks",
@@ -40,7 +39,7 @@ const Projects = () => {
         "Computer vision integration"
       ],
       icon: Brain,
-      color: "from-blue-500 to-indigo-500"
+      color: "bg-gray-800"
     },
     {
       title: "RefineX – AI-Powered Data Cleaning & EDA Assistant",
@@ -59,7 +58,7 @@ const Projects = () => {
         "Natural language interface"
       ],
       icon: Code,
-      color: "from-purple-500 to-pink-500"
+      color: "bg-gray-700"
     }
   ];
 
@@ -82,7 +81,7 @@ const Projects = () => {
         "Hybrid architecture design"
       ],
       icon: Brain,
-      color: "from-orange-500 to-red-500"
+      color: "bg-gray-900"
     },
     {
       title: "Neural Style Transfer",
@@ -103,7 +102,7 @@ const Projects = () => {
       ],
       link: "#",
       icon: Sparkles,
-      color: "from-pink-500 to-rose-500"
+      color: "bg-gray-800"
     }
   ];
 
@@ -111,34 +110,24 @@ const Projects = () => {
     <section className="py-20 bg-white relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 text-black">
             Academic Projects
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Showcasing innovative projects that demonstrate expertise in AI/ML, computer vision, and full-stack development.
           </p>
-        </motion.div>
+        </div>
 
         {/* Projects List */}
         <div className="space-y-8 mb-16">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200/50 hover:shadow-xl transition-all duration-300"
+              className="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
             >
               <div className="flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
-                <div className={`p-3 bg-gradient-to-r ${project.color} rounded-xl flex-shrink-0 flex justify-center sm:justify-start`}>
+                <div className={`p-3 ${project.color} rounded-xl flex-shrink-0 flex justify-center sm:justify-start`}>
                   <project.icon className="text-white" size={24} />
                 </div>
                 <div className="flex-1">
@@ -160,7 +149,7 @@ const Projects = () => {
                   <ul className="space-y-1">
                     {project.points.map((point, pointIndex) => (
                       <li key={pointIndex} className="flex items-start space-x-2">
-                        <div className="w-1.5 h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-gray-700 text-sm">{point}</span>
                       </li>
                     ))}
@@ -174,7 +163,7 @@ const Projects = () => {
                     {project.metrics.map((metric, metricIndex) => (
                       <span
                         key={metricIndex}
-                        className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-700 rounded-full text-xs font-medium border border-blue-200"
+                        className="px-3 py-1 bg-gray-100 text-black rounded-full text-xs font-medium border border-gray-300"
                       >
                         {metric}
                       </span>
@@ -186,25 +175,20 @@ const Projects = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-white/80 text-gray-700 rounded-full text-sm font-medium border border-gray-200"
+                      className="px-3 py-1 bg-white text-gray-700 rounded-full text-sm font-medium border border-gray-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Publications Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <div>
+          <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center text-black">
             Publications & Research
           </h3>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto text-center mb-12">
@@ -213,21 +197,17 @@ const Projects = () => {
           
           <div className="space-y-8">
             {publications.map((pub, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-50 to-purple-50 rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200/50 hover:shadow-xl transition-all duration-300"
+                className="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
-                  <div className={`p-3 bg-gradient-to-r ${pub.color} rounded-xl flex-shrink-0 flex justify-center sm:justify-start`}>
+                  <div className={`p-3 ${pub.color} rounded-xl flex-shrink-0 flex justify-center sm:justify-start`}>
                     <pub.icon className="text-white" size={24} />
                   </div>
                   <div className="flex-1">
                     <h4 className="text-lg font-bold text-gray-900 mb-1">{pub.title}</h4>
-                    <p className="text-sm text-purple-600 font-medium">{pub.status}</p>
+                    <p className="text-sm text-gray-900 font-medium">{pub.status}</p>
                   </div>
                 </div>
                 
@@ -242,7 +222,7 @@ const Projects = () => {
                     <ul className="space-y-1">
                       {pub.points.map((point, pointIndex) => (
                         <li key={pointIndex} className="flex items-start space-x-2">
-                          <div className="w-1.5 h-1.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-1.5 h-1.5 bg-black rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-gray-700 text-sm">{point}</span>
                         </li>
                       ))}
@@ -256,7 +236,7 @@ const Projects = () => {
                       {pub.metrics.map((metric, metricIndex) => (
                         <span
                           key={metricIndex}
-                          className="px-3 py-1 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 rounded-full text-xs font-medium border border-purple-200"
+                          className="px-3 py-1 bg-gray-100 text-black rounded-full text-xs font-medium border border-gray-300"
                         >
                           {metric}
                         </span>
@@ -268,7 +248,7 @@ const Projects = () => {
                     {pub.technologies.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 bg-white/80 text-gray-700 rounded-full text-sm font-medium border border-gray-200"
+                        className="px-3 py-1 bg-white text-gray-700 rounded-full text-sm font-medium border border-gray-300"
                       >
                         {tech}
                       </span>
@@ -277,10 +257,10 @@ const Projects = () => {
                   
 
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

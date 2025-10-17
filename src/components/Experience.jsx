@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Briefcase, Users, Code, Award, Sparkles, Calendar, MapPin } from 'lucide-react';
 
 const Experience = () => {
@@ -20,7 +19,7 @@ const Experience = () => {
         "Led logic-building bootcamps at Kakatiya Institute of Technology & Science (KITS)"
       ],
       icon: Users,
-      color: "from-blue-500 to-indigo-500"
+      color: "bg-gray-900"
     },
     {
       title: "Freelance Client Projects",
@@ -33,7 +32,7 @@ const Experience = () => {
         "Mentored developers on reusable Python code and testing"
       ],
       icon: Code,
-      color: "from-green-500 to-emerald-500"
+      color: "bg-gray-700"
     },
     {
       title: "Newbie Learning — Teaching Assistant & AI Mentor",
@@ -45,7 +44,7 @@ const Experience = () => {
         "Improved code quality and logic-building skills by 40%"
       ],
       icon: Award,
-      color: "from-purple-500 to-pink-500"
+      color: "bg-gray-800"
     }
   ];
 
@@ -54,37 +53,37 @@ const Experience = () => {
       title: "Placement Prep Bootcamp",
       description: "Trained 100+ students in sorting, recursion, greedy, DP, trees, and graphs using Python",
       icon: Sparkles,
-      color: "from-orange-500 to-red-500"
+      color: "bg-gray-900"
     },
     {
       title: "Code Sprint Lab (for 3 colleges)",
       description: "Led 2-week competitive programming sprint with live problem-solving",
       icon: Code,
-      color: "from-blue-500 to-cyan-500"
+      color: "bg-gray-800"
     },
     {
       title: "DSA Crash Course",
       description: "Designed and delivered modules with 200+ curated problems (LC/GFG level)",
       icon: Briefcase,
-      color: "from-green-500 to-teal-500"
+      color: "bg-gray-700"
     },
     {
       title: "Mock Interview Platform (mini-project)",
       description: "Mentored students to build a DSA mock interview simulator using Python + SQLite",
       icon: Users,
-      color: "from-purple-500 to-indigo-500"
+      color: "bg-gray-900"
     },
     {
       title: "Dynamic Path Planner",
       description: "Guided a project on shortest path algorithms (Dijkstra, A*) applied to logistics data",
       icon: MapPin,
-      color: "from-pink-500 to-rose-500"
+      color: "bg-gray-800"
     },
     {
       title: "Student Management CLI App",
       description: "Focused on implementing core DSA operations (linked lists, trees, hashmaps) in real use cases",
       icon: Calendar,
-      color: "from-yellow-500 to-orange-500"
+      color: "bg-gray-700"
     }
   ];
 
@@ -94,40 +93,30 @@ const Experience = () => {
     <section className="py-20 bg-white relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 text-black">
             Freelance Experience
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Extensive experience in AI training, DSA mentoring, and project supervision across multiple institutions and clients.
           </p>
-        </motion.div>
+        </div>
 
         {/* Experience Timeline */}
         <div className="space-y-12 mb-16">
           {experiences.map((exp, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
               className="relative"
             >
               <div className="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
                 <div className="flex-shrink-0 flex justify-center sm:justify-start">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${exp.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+                  <div className={`w-16 h-16 ${exp.color} rounded-2xl flex items-center justify-center shadow-lg`}>
                     <exp.icon className="text-white" size={28} />
                   </div>
                 </div>
                 
-                <div className="flex-1 bg-white/70 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200/50">
+                <div className="flex-1 bg-white backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                     <div>
                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{exp.title}</h3>
@@ -148,7 +137,7 @@ const Experience = () => {
                     <ul className="space-y-2">
                       {exp.achievements.map((achievement, achievementIndex) => (
                         <li key={achievementIndex} className="flex items-start space-x-3">
-                          <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-black rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-gray-700 text-sm sm:text-base">{achievement}</span>
                         </li>
                       ))}
@@ -156,34 +145,24 @@ const Experience = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Selected Mentorship Projects */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center text-black">
             Selected DSA + Python Mentorship Projects
           </h3>
           
           <div className="grid md:grid-cols-2 gap-6">
             {mentorshipProjects.map((project, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200/50 hover:shadow-xl transition-all duration-300"
+                className="bg-white backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4">
-                  <div className={`p-3 bg-gradient-to-r ${project.color} rounded-xl flex-shrink-0`}>
+                  <div className={`p-3 ${project.color} rounded-xl flex-shrink-0`}>
                     <project.icon className="text-white" size={24} />
                   </div>
                   <h4 className="text-lg font-bold text-gray-900">{project.title}</h4>
@@ -191,10 +170,10 @@ const Experience = () => {
                 <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
                   {project.description}
                 </p>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
 
       </div>

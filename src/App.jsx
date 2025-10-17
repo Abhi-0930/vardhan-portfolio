@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { Download, ArrowUp } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -45,36 +44,14 @@ function App() {
       <Header activeSection={activeSection} setActiveSection={setActiveSection} scrolled={scrolled} />
       
       {/* Floating Jump to Top Button */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="fixed bottom-6 right-6 z-50"
-      >
-        <motion.button 
-          whileHover={{ scale: 1.1, y: -5 }}
-          whileTap={{ scale: 0.9 }}
+      <div className="fixed bottom-6 right-6 z-50">
+        <button 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden group"
+          className="flex items-center justify-center w-16 h-16 bg-black text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden group hover:bg-gray-900"
         >
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20 rounded-full"
-          />
-          <ArrowUp size={28} className="relative z-10 group-hover:scale-110 transition-transform duration-300" />
-          
-          {/* Tooltip */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileHover={{ opacity: 1, y: 0 }}
-            className="absolute bottom-full right-0 mb-2 px-3 py-1 bg-gray-900 text-white text-sm rounded-lg whitespace-nowrap shadow-lg"
-          >
-            Jump to Top
-            <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
-          </motion.div>
-        </motion.button>
-      </motion.div>
+          <ArrowUp size={28} className="relative z-10" />
+        </button>
+      </div>
 
       <main>
         <section id="home">
