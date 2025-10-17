@@ -141,6 +141,16 @@ const StudentFeedback = () => {
       icon: Sparkles,
       color: "bg-gray-800",
       feedbackLink: "https://docs.google.com/spreadsheets/d/1s76hGVPFQ72PBkwT-42B2JpNUzTFlF-aQPWJNYSttdg/edit?usp=sharing"
+    },
+    {
+      college: "Hyderabad Institute of Technology and Management",
+      location: "Hyderabad, Telangana",
+      feedback: "Focused AI & DSA sessions with weekly problem-solving sprints. Students are building strong fundamentals and showcasing projects in reviews.",
+      student: "",
+      rating: 5,
+      icon: Code,
+      color: "bg-gray-900",
+      feedbackLink: "https://docs.google.com/spreadsheets/d/1Eq3px5t6G1qct7M5e9Yf0fzTWxN3BIr5WJfUkPhg-kw/edit?usp=sharing"
     }
   ];
 
