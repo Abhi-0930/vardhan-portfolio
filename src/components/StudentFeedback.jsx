@@ -123,24 +123,14 @@ const StudentFeedback = () => {
       feedbackLink: "https://docs.google.com/spreadsheets/d/1f9DmDb7FjGgj26nRXZv9MibW3MmDCnLZrNKnec2qBPQ/edit?usp=sharing"
     },
     {
-      college: "Vignan's Foundation for Science, Technology and Research",
-      location: "Guntur, Andhra Pradesh",
-      feedback: "The Python and data science training was exceptional. We learned to build production-ready applications and deploy them successfully.",
-      student: "Ravi Teja",
+      college: "Chitkara University",
+      location: "Punjab, India",
+      feedback: "Intensive AI & DSA sessions with capstone projects. Students are actively building deployable applications and preparing for product-based interviews.",
+      student: "",
       rating: 5,
       icon: Calendar,
       color: "bg-gray-700",
       feedbackLink: "https://docs.google.com/spreadsheets/d/1_M0vlZP0IU1JHMepAAl-HqmsUmUGsFlxHXCjoek8CVM/edit?usp=sharing"
-    },
-    {
-      college: "Prasad V. Potluri Siddhartha Institute of Technology",
-      location: "Vijayawada, Andhra Pradesh",
-      feedback: "His teaching methodology made complex AI concepts accessible. The hands-on approach helped us understand real-world applications.",
-      student: "Suresh Kumar",
-      rating: 5,
-      icon: Award,
-      color: "bg-gray-900",
-      feedbackLink: "https://docs.google.com/spreadsheets/d/1Eq3px5t6G1qct7M5e9Yf0fzTWxN3BIr5WJfUkPhg-kw/edit?usp=sharing"
     },
     {
       college: "Kalasalingam Academy of Research and Education",
