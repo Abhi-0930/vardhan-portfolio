@@ -2,7 +2,17 @@ import { Award, Sparkles, Code, Users, Briefcase, Calendar, Quote } from 'lucide
 
 const StudentFeedback = () => {
   const studentFeedback = [
-         {
+    {
+      college: "CMR College of Engineering",
+      location: "Hyderabad, Telangana",
+      feedback: "Currently teaching comprehensive AI & DSA sessions — curriculum rollout is in progress with weekly hands-on labs and interview prep modules.",
+      student: "",
+      rating: 5,
+      icon: Code,
+      color: "bg-gray-900",
+      feedbackLink: "https://docs.google.com/spreadsheets/d/1Eq3px5t6G1qct7M5e9Yf0fzTWxN3BIr5WJfUkPhg-kw/edit?usp=sharing"
+    },
+    {
       college: "Government Engineering College, Thrissur",
       location: "Kerala, India",
       feedback: "Srivardhan's teaching style made complex algorithms easy to understand. His practical approach helped me secure a placement at a top tech company.",
@@ -61,6 +71,86 @@ const StudentFeedback = () => {
       icon: Calendar,
       color: "bg-gray-700",
       feedbackLink: "https://docs.google.com/spreadsheets/d/1_M0vlZP0IU1JHMepAAl-HqmsUmUGsFlxHXCjoek8CVM/edit?usp=sharing"
+    },
+    {
+      college: "Sree Vidyanikethan Engineering College",
+      location: "Tirupati, Andhra Pradesh",
+      feedback: "The machine learning bootcamp was outstanding. We implemented real-time prediction models and gained hands-on experience with industry tools.",
+      student: "Rajesh Kumar",
+      rating: 5,
+      icon: Award,
+      color: "bg-gray-900",
+      feedbackLink: "https://docs.google.com/spreadsheets/d/1Eq3px5t6G1qct7M5e9Yf0fzTWxN3BIr5WJfUkPhg-kw/edit?usp=sharing"
+    },
+    {
+      college: "Sreenidhi University",
+      location: "Hyderabad, Telangana",
+      feedback: "His data structures and algorithms training was comprehensive. The coding interview preparation helped me crack multiple company interviews.",
+      student: "Sneha Reddy",
+      rating: 5,
+      icon: Code,
+      color: "bg-gray-800",
+      feedbackLink: "https://docs.google.com/spreadsheets/d/1s76hGVPFQ72PBkwT-42B2JpNUzTFlF-aQPWJNYSttdg/edit?usp=sharing"
+    },
+    {
+      college: "MVSR Engineering College",
+      location: "Hyderabad, Telangana",
+      feedback: "The AI workshop transformed our understanding of neural networks. We built end-to-end projects that are now part of our portfolio.",
+      student: "Kiran Sharma",
+      rating: 5,
+      icon: Sparkles,
+      color: "bg-gray-700",
+      feedbackLink: "https://docs.google.com/spreadsheets/d/1pQ7WNaN6ucvKak2yH6ALGYEvXqV0nFZdiyEDdi7FH10/edit?usp=sharing"
+    },
+    {
+      college: "VIT",
+      location: "Chennai, Tamil Nadu",
+      feedback: "The placement preparation sessions were game-changing. His mock interviews and resume guidance helped me secure offers from top MNCs.",
+      student: "Aravind Nair",
+      rating: 5,
+      icon: Briefcase,
+      color: "bg-gray-900",
+      feedbackLink: "https://docs.google.com/spreadsheets/d/1AJBsRJijZZpowg91a60r-b8I9vqJBfCxTO7KDMiVOB8/edit?usp=sharing"
+    },
+    {
+      college: "Kakatiya Institute of Technology & Science (KITS)",
+      location: "Warangal, Telangana",
+      feedback: "The deep learning projects we worked on were industry-relevant. His mentorship in computer vision opened new career opportunities.",
+      student: "Priyanka Singh",
+      rating: 5,
+      icon: Users,
+      color: "bg-gray-800",
+      feedbackLink: "https://docs.google.com/spreadsheets/d/1f9DmDb7FjGgj26nRXZv9MibW3MmDCnLZrNKnec2qBPQ/edit?usp=sharing"
+    },
+    {
+      college: "Vignan's Foundation for Science, Technology and Research",
+      location: "Guntur, Andhra Pradesh",
+      feedback: "The Python and data science training was exceptional. We learned to build production-ready applications and deploy them successfully.",
+      student: "Ravi Teja",
+      rating: 5,
+      icon: Calendar,
+      color: "bg-gray-700",
+      feedbackLink: "https://docs.google.com/spreadsheets/d/1_M0vlZP0IU1JHMepAAl-HqmsUmUGsFlxHXCjoek8CVM/edit?usp=sharing"
+    },
+    {
+      college: "Prasad V. Potluri Siddhartha Institute of Technology",
+      location: "Vijayawada, Andhra Pradesh",
+      feedback: "His teaching methodology made complex AI concepts accessible. The hands-on approach helped us understand real-world applications.",
+      student: "Suresh Kumar",
+      rating: 5,
+      icon: Award,
+      color: "bg-gray-900",
+      feedbackLink: "https://docs.google.com/spreadsheets/d/1Eq3px5t6G1qct7M5e9Yf0fzTWxN3BIr5WJfUkPhg-kw/edit?usp=sharing"
+    },
+    {
+      college: "Kalasalingam Academy of Research and Education",
+      location: "Krishnankoil, Tamil Nadu",
+      feedback: "The research guidance and project supervision were outstanding. We published papers and presented at conferences under his mentorship.",
+      student: "Deepika Rajan",
+      rating: 5,
+      icon: Sparkles,
+      color: "bg-gray-800",
+      feedbackLink: "https://docs.google.com/spreadsheets/d/1s76hGVPFQ72PBkwT-42B2JpNUzTFlF-aQPWJNYSttdg/edit?usp=sharing"
     }
   ];
 
@@ -86,20 +176,39 @@ const StudentFeedback = () => {
             >
               {/* Mode Badge (Online/Offline) */}
               {(() => {
-                const onlineIndices = new Set([0, 2]);
+                const onlineIndices = new Set([2, 6, 9, 11]);
+                const isCMR = index === 0;
                 const isOnline = onlineIndices.has(index);
+                const badge = isCMR ? {
+                  label: 'In Progress',
+                  bg: 'bg-amber-50',
+                  text: 'text-amber-800',
+                  border: 'border-amber-200',
+                  dot: 'bg-amber-500',
+                  aria: 'In progress mode'
+                } : isOnline ? {
+                  label: 'Online',
+                  bg: 'bg-emerald-50',
+                  text: 'text-emerald-700',
+                  border: 'border-emerald-200',
+                  dot: 'bg-emerald-500',
+                  aria: 'Online mode'
+                } : {
+                  label: 'Offline',
+                  bg: 'bg-gray-100',
+                  text: 'text-gray-700',
+                  border: 'border-gray-200',
+                  dot: 'bg-gray-400',
+                  aria: 'Offline mode'
+                };
                 return (
                   <div className="absolute top-4 right-4">
                     <span
-                      className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border ${
-                        isOnline
-                          ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                          : 'bg-gray-100 text-gray-700 border-gray-200'
-                      }`}
-                      aria-label={isOnline ? 'Online mode' : 'Offline mode'}
+                      className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border ${badge.bg} ${badge.text} ${badge.border}`}
+                      aria-label={badge.aria}
                     >
-                      <span className={`h-2 w-2 rounded-full ${isOnline ? 'bg-emerald-500' : 'bg-gray-400'}`}></span>
-                      {isOnline ? 'Online' : 'Offline'}
+                      <span className={`h-2 w-2 rounded-full ${badge.dot}`}></span>
+                      {badge.label}
                     </span>
                   </div>
                 );
