@@ -71,15 +71,56 @@ const Hero = ({ setActiveSection }) => {
                 </span>
               </motion.h1>
               
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-xl text-gray-600 leading-relaxed"
+                transition={{ delay: 0.25, duration: 0.6 }}
+                className="inline-flex items-center gap-2 rounded-full bg-gray-100 text-gray-800 px-4 py-2 text-sm font-medium"
+                aria-label="AI and DSA Trainer badge"
               >
-                AI & DSA Trainer empowering 9000+ students across 20+ premier institutions in India. 
-                Specializing in hands-on training with 96% placement success rates, transforming theoretical concepts into career-ready skills through intensive bootcamps, live projects, and personalized mentorship.
-              </motion.p>
+                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                DSA Trainer
+              </motion.div>
+
+              <motion.ul
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.6 }}
+                className="space-y-3 text-gray-700"
+              >
+                <li className="flex gap-3">
+                  <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-black text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                      <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.59a.75.75 0 1 0-1.22-.87l-3.22 4.53-1.56-1.56a.75.75 0 1 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.15-.094l3.66-5.32Z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                  <span className="text-lg leading-relaxed">Empowered 9,000+ students across 20+ premier institutions</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-black text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                      <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.59a.75.75 0 1 0-1.22-.87l-3.22 4.53-1.56-1.56a.75.75 0 1 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.15-.094l3.66-5.32Z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                  <span className="text-lg leading-relaxed">Hands-on AI, ML, and DSA bootcamps with real projects</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-black text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                      <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.59a.75.75 0 1 0-1.22-.87l-3.22 4.53-1.56-1.56a.75.75 0 1 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.15-.094l3.66-5.32Z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                  <span className="text-lg leading-relaxed">96% placement success through interview-focused training</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-black text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+                      <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.59a.75.75 0 1 0-1.22-.87l-3.22 4.53-1.56-1.56a.75.75 0 1 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.15-.094l3.66-5.32Z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                  <span className="text-lg leading-relaxed">Personalized mentorship and career roadmap guidance</span>
+                </li>
+              </motion.ul>
           </motion.div>
 
           {/* Right Side - Animated Black Circle with Typing Text */}

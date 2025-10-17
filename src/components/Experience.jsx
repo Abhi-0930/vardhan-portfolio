@@ -6,7 +6,7 @@ const Experience = () => {
       title: "Freelance AI & DSA Trainer / Project Mentor",
       company: "Remote / On-site (India)",
       duration: "June 2022 – Present",
-      description: "Delivered hands-on training, mentorship, and project supervision in AI, Python, and DSA to over 500 students across 8+ institutions.",
+      description: "Delivered hands-on training, mentorship, and project supervision in AI, Python, and DSA to over 9000 students across 20+ institutions.",
       achievements: [
         "Mentored real-world projects in NLP, Computer Vision, and core algorithm design using Python",
         "Created and led problem-solving bootcamps targeting service/product-based placements",

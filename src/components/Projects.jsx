@@ -112,7 +112,7 @@ const Projects = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6 text-black">
-            Academic Projects
+            Skill Development Projects
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Showcasing innovative projects that demonstrate expertise in AI/ML, computer vision, and full-stack development.

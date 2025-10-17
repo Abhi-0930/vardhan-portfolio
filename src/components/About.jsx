@@ -19,11 +19,11 @@ const About = () => {
             <div className="bg-white backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-200">
               <div className="space-y-6">
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  As a dedicated AI & DSA Trainer, I've had the privilege of mentoring over 500+ students across 8+ premier institutions throughout India. My journey in education has been driven by a singular mission: transforming theoretical knowledge into practical, career-ready skills.
+                  As a dedicated AI & DSA Trainer, I've had the privilege of mentoring over 9000+ students across 20+ premier institutions throughout India. My journey in education has been driven by a singular mission: transforming theoretical knowledge into practical, career-ready skills.
                 </p>
                 
                 <p className="text-gray-700 leading-relaxed text-lg">
-                  My teaching methodology combines hands-on project work with real-world problem-solving. Whether it's guiding students through complex Neural Networks achieving 92% accuracy or helping them master Data Structures & Algorithms for top tech placements, I focus on building both technical competence and problem-solving confidence.
+                  My teaching methodology combines hands-on project work with real-world problem-solving. Whether it's guiding students through complex Neural Networks achieving 96% accuracy or helping them master Data Structures & Algorithms for top tech placements, I focus on building both technical competence and problem-solving confidence.
                 </p>
                 
                 <p className="text-gray-700 leading-relaxed text-lg">

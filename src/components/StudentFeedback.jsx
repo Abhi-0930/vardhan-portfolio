@@ -1,11 +1,6 @@
-import { Award, Sparkles, Code, Users, Briefcase, Calendar, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { Award, Sparkles, Code, Users, Briefcase, Calendar, Quote } from 'lucide-react';
 
 const StudentFeedback = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
   const studentFeedback = [
          {
       college: "Government Engineering College, Thrissur",
@@ -69,46 +64,6 @@ const StudentFeedback = () => {
     }
   ];
 
-  // Auto-play functionality with pause on hover
-  useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % studentFeedback.length);
-      }, 2500); // Auto-advance every 2.5 seconds (faster)
-
-      return () => clearInterval(interval);
-    }
-  }, [isPaused, studentFeedback.length]);
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % studentFeedback.length);
-  };
-
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev - 1 + studentFeedback.length) % studentFeedback.length);
-  };
-
-  // Touch/swipe handlers
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e) => {
-    touchEndX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStartX.current - touchEndX.current > 50) {
-      // Swiped left
-      goToNext();
-    }
-
-    if (touchStartX.current - touchEndX.current < -50) {
-      // Swiped right
-      goToPrevious();
-    }
-  };
-
   return (
     <section className="py-20 bg-white relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,95 +77,67 @@ const StudentFeedback = () => {
           </p>
         </div>
 
-        {/* Slider Container */}
-        <div 
-          className="relative"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-        >
-          {/* Slider Wrapper */}
-          <div className="overflow-hidden">
-            <div 
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        {/* Vertical Card List (matching Publications & Research UI) */}
+        <div className="space-y-8">
+          {studentFeedback.map((feedback, index) => (
+            <div
+              key={index}
+              className="bg-gray-50 rounded-2xl p-6 sm:p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 relative"
             >
-              {studentFeedback.map((feedback, index) => (
-                <div
-                  key={index}
-                  className="w-full flex-shrink-0 px-2 sm:px-4"
-                >
-                  <div className="bg-white backdrop-blur-sm rounded-2xl p-12 shadow-xl border border-gray-200 hover:shadow-2xl transition-all duration-300 max-w-5xl mx-auto">
-                    {/* College Header */}
-                    <div className="flex items-start space-x-6 mb-8">
-                      <div className={`p-4 ${feedback.color} rounded-xl flex-shrink-0`}>
-                        <feedback.icon className="text-white" size={32} />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-2xl font-bold text-gray-900 mb-2">{feedback.college}</h4>
-                        <p className="text-base text-gray-600">{feedback.location}</p>
-                      </div>
-                    </div>
-
-                    {/* Quote */}
-                    <div className="mb-8">
-                      <div className="flex items-start space-x-4">
-                        <Quote className="text-gray-900 mt-2 flex-shrink-0" size={28} />
-                        <p className="text-gray-700 leading-relaxed italic text-xl">
-                          "{feedback.feedback}"
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* View More Feedback Button */}
-                    <a
-                      href={feedback.feedbackLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full bg-black text-white py-4 px-6 rounded-xl font-medium text-lg hover:bg-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center cursor-pointer"
+              {/* Mode Badge (Online/Offline) */}
+              {(() => {
+                const onlineIndices = new Set([0, 2]);
+                const isOnline = onlineIndices.has(index);
+                return (
+                  <div className="absolute top-4 right-4">
+                    <span
+                      className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border ${
+                        isOnline
+                          ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                          : 'bg-gray-100 text-gray-700 border-gray-200'
+                      }`}
+                      aria-label={isOnline ? 'Online mode' : 'Offline mode'}
                     >
-                      View More Feedback
-                    </a>
+                      <span className={`h-2 w-2 rounded-full ${isOnline ? 'bg-emerald-500' : 'bg-gray-400'}`}></span>
+                      {isOnline ? 'Online' : 'Offline'}
+                    </span>
+                  </div>
+                );
+              })()}
+
+              <div className="flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
+                <div className={`p-3 ${feedback.color} rounded-xl flex-shrink-0 flex justify-center sm:justify-start`}>
+                  <feedback.icon className="text-white" size={24} />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-1">{feedback.college}</h4>
+                  <p className="text-sm text-gray-600">{feedback.location}</p>
+                </div>
+              </div>
+
+              <div className="sm:ml-16">
+                <div className="mb-6">
+                  <div className="flex items-start space-x-3">
+                    <Quote className="text-gray-900 mt-1 flex-shrink-0" size={22} />
+                    <p className="text-gray-700 leading-relaxed italic text-sm sm:text-base">
+                      "{feedback.feedback}"
+                    </p>
                   </div>
                 </div>
-              ))}
+
+                <div className="flex items-center justify-end">
+                  <a
+                    href={feedback.feedbackLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-4 py-2 bg-black text-white rounded-xl text-sm font-medium hover:bg-gray-900 transition-all duration-300 shadow-md hover:shadow-lg"
+                  >
+                    View More
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* Navigation Arrows - Desktop Only - Centered to content */}
-          <button
-            onClick={goToPrevious}
-            className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-20 bg-black text-white p-4 rounded-full shadow-xl hover:bg-gray-900 hover:scale-110 transition-all duration-300 z-10"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft size={28} />
-          </button>
-          
-          <button
-            onClick={goToNext}
-            className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-20 bg-black text-white p-4 rounded-full shadow-xl hover:bg-gray-900 hover:scale-110 transition-all duration-300 z-10"
-            aria-label="Next slide"
-          >
-            <ChevronRight size={28} />
-          </button>
-
-          {/* Dots Indicator */}
-          <div className="flex justify-center items-center space-x-2 mt-8">
-            {studentFeedback.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`transition-all duration-300 ${
-                  currentIndex === index
-                    ? 'w-8 h-3 bg-black rounded-full'
-                    : 'w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-400'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </section>
